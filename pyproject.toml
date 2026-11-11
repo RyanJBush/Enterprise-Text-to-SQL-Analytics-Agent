@@ -1,0 +1,10 @@
+[project]
+name = "text2sql-mvp"
+version = "0.1.0"
+description = "Enterprise text-to-SQL analytics agent (MVP): fixture + restricted SQLite executor"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+# Only for the opt-in `--live` CLI mode. 2.8.0 is the version the live adapter was checked against.
+live = ["anthropic>=2.8,<3"]

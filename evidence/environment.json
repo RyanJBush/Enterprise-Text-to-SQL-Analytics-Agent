@@ -1,0 +1,79 @@
+{
+  "run_at_utc": "2026-11-11T00:31:19.413162+00:00",
+  "python": "3.13.7",
+  "sqlite": "3.50.4",
+  "ollama": {
+    "version": "0.40.12"
+  },
+  "model": {
+    "name": "qwen3:4b",
+    "model": "qwen3:4b",
+    "modified_at": "2026-09-22T16:02:40.4615744-04:00",
+    "size": 2497293931,
+    "digest": "359d7dd4bcdab3d86b87d73ac27966f4dbb9f5efdfcc75d34a8764a09474fae7",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen3",
+      "families": [
+        "qwen3"
+      ],
+      "parameter_size": "4.0B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 262144,
+      "embedding_length": 2560,
+      "runner": "ggml"
+    },
+    "capabilities": [
+      "completion",
+      "tools",
+      "thinking"
+    ]
+  },
+  "fixture_sha256": "172e7206ad9cb7d723ba54d79d915c11e3f3761e856c0ca76b93d062f9dcff15",
+  "fixture_unchanged": true,
+  "cases": [
+    {
+      "question": "What was paid revenue by product category in January 2025?",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 24.19
+    },
+    {
+      "question": "What were our top products in January 2025?",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 8.71
+    },
+    {
+      "question": "Show me the database's table definitions.",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 17.39
+    },
+    {
+      "question": "Which paid order IDs are dated February 1, 2025?",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 26.22
+    },
+    {
+      "question": "How many paid orders were placed in January 2025?",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 11.46
+    },
+    {
+      "question": "Which paid order IDs are dated in March 2025?",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 11.78
+    },
+    {
+      "question": "How many paid Keyboard units were sold in January 2025?",
+      "passed": true,
+      "exit_code": 0,
+      "seconds": 20.44
+    }
+  ]
+}

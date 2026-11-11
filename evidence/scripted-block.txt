@@ -1,0 +1,9 @@
+SCRIPTED DEMO - the proposed SQL comes from a fixed script, not a live model.
+Question: Show me the database's table definitions.
+
+Proposed SQL:
+  SELECT name, sql FROM main.sqlite_schema;
+
+Status: denied - blocked by the database (SQLITE_READ on sqlite_master.name). No rows were returned.
+
+[exit code 1]
