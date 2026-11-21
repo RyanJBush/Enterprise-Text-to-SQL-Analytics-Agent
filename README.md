@@ -1,7 +1,10 @@
 # Enterprise Text-to-SQL Analytics Agent
 
-A local portfolio MVP that turns a business question into proposed SQL, runs it through
-a restricted SQLite connection, and builds an answer from the returned rows.
+**Natural-Language Analytics with Restricted SQL Execution**
+
+A local text-to-SQL analytics assistant that converts business questions into validated
+SQL proposals, executes permitted operations through restricted SQLite access, and
+generates answers from returned database rows. It is a two-table portfolio MVP.
 The local path uses Ollama and `qwen3:4b`. It requires no API key, API credits, or Python
 packages beyond the standard library. Ollama and the model must be installed separately.
 
@@ -12,13 +15,21 @@ clarification, and SQLite denial using actual captured CLI output at its origina
 The first two cases use the local model. The last uses the labeled scripted adapter.
 The recording data is saved in [demo-capture.json](docs/media/demo-capture.json).
 
-The final local evaluation passed seven acceptance cases. The test suite ran 185 tests,
-with 182 passing and three optional Anthropic SDK tests skipped. See
+The recorded local evaluation (November 10, 2026) passed seven acceptance cases.
+The test suite ran 185 tests, with 182 passing and three optional Anthropic SDK
+tests skipped. See
 [verified results](evidence/results.md) and [exact test output](evidence/test-output.txt).
 
 ## Run
 
-Open a terminal in this project folder. Start Ollama with `qwen3:4b` installed.
+Clone the repository and open a terminal in the project folder:
+
+```powershell
+git clone https://github.com/RyanJBush/Enterprise-Text-to-SQL-Analytics-Agent.git
+cd Enterprise-Text-to-SQL-Analytics-Agent
+```
+
+Start Ollama with `qwen3:4b` installed.
 Both were already available on the development machine. Python 3.11+ is required.
 
 ```powershell
@@ -28,7 +39,8 @@ python -m text2sql.cli --local --db fixture.sqlite3 "What were our top products 
 python -m text2sql.cli --local --db fixture.sqlite3 "Show me the database's table definitions."
 ```
 
-A seeded fixture is included. The first command rebuilds that synthetic fixture.
+The fixture database is not committed (`*.sqlite3` is git-ignored). The first command
+builds it from `sql/seed.sql`, and `demo.ps1` creates it when it is missing.
 Overwriting an existing fixture requires `--replace`.
 `demo.ps1` runs the three local questions and the scripted database-block case.
 For another machine, install Ollama from its official website and download the model
